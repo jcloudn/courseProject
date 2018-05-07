@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vegilicious Home</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<link href="myStyle.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+	<style>
+		.sidenav {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #CD5C5C;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+
+		.sidenav a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #8B4513;
+			display: block;
+			transition: 0.3s;
+		}
+
+		.sidenav a:hover {
+			color: #f1f1f1;
+		}
+
+		.sidenav .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 25px;
+		}
+
+		@media screen and (max-height: 450px) {
+			.sidenav {
+				padding-top: 15px;
+			}
+			.sidenav a {
+				font-size: 18px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="Mod3Index.html">Home</a>
+		<a href="Mod3About.html">About</a>
+		<a href="Mod3Contact.html">Contact</a>
+		<a href="favorites.html">Favorites</a>
+		<a href="veggiePics.html">Veggie Pics</a>
+	</div>
+
+	<div id="page" data-role="page" data-theme="a" data-add-back-btn="true">
+		<div data-role="header" data-theme="a">
+		</div>
+
+		<div data-role="header">
+			<h1>Welcome To Vegilicious!</h1>
+		</div>
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+		<div data-role="content">
+			<div id="banner">
+				<img src="images/kitchen.jpg">
+			</div>
+
+			<section>
+				<i class="fas fa-piggy-bank fa-5x"></i>
+				<h2><a href="Mod3Bacon.html">
+				What Makes Veggies Better?</a></h2>
+				<p>Check out one of the things that can make your vegetables taste better.</p>
+			</section>
+
+			<section>
+				<i class="fas fa-utensils fa-5x"></i>
+				<h2><a href="Mod3Recipes.html">Where To Start For Recipes?</a></h2>
+				<p>We can get you started on your journey to exciting recipes that will tantalize your palate.</p>
+			</section>
+
+			<section>
+				<i class="fas fa-seedling fa-5x"></i>
+				<h2><a href="Mod3veggieList.html">Top 6 Veggies</a></h2>
+				<p>Check out this list of my top six favorite veggies.</p>
+			</section>
+
+		</div>
+		<div data-role="footer" data-theme="a">
+			<h4>Vegilicious &copy; 2018</h4>
+		</div>
+
+	</div>
+
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+		}
+	</script>
+</body>
+
+</html>

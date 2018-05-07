@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vegilicious Contact</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<link rel="stylesheet" href="theme2/orange.css" />
+	<link rel="stylesheet" href="theme2/orange.min.css" />
+	<link rel="stylesheet" href="theme2/jquery.mobile.icons.min.css" />
+	<link href="myStyle.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+	<style>
+		img {
+			max-width: 100%;
+			height: auto;
+			width: auto;
+		}
+
+		.logo {
+			margin: 20px;
+			float: left;
+			width: 130px;
+			height: 60px;
+			padding-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-theme="a">
+			<div class="logo"><img src="images/vegiliciousLogo.png" width="130" height="60" alt="" /></div>
+		</div>
+		<div data-role="navbar">
+
+			<ul>
+				<li><a href="Mod3Index.html" class="ui-btn-active">Home</a></li>
+				<li><a href="Mod3About.html">About</a></li>
+				<li><a href="Mod3Contact.html">Contact</a></li>
+				<li><a href="favorites.html">Favorites</a></li>
+			</ul>
+		</div>
+		<div data-role="header" data-theme="a" data-add-back-btn="true">
+			<h1>Contact Us!</h1>
+		</div>
+		<div data-role="content">
+			<div id="banner">
+				<img src="images/beetsbasket.jpg">
+			</div>
+
+			<ul>
+				<li><i class="fa fa-road"></i> 1007 Mountain Drive, Gotham</li>
+				<li><i class="fa fa-phone"></i> (555) 555-5555</li>
+				<li><i class="fa fa-envelope"></i> test@vegilicious.com</li>
+			</ul>
+			<div data-role="header" data-theme="a">
+				<h1>Fun With LocalStorage</h1>
+			</div>
+			<div data-role="content">
+				<form>
+					<p>Nothing is impossible, the word itself says 'I'm possible'! Audrey Hepburn
+					</p>
+					<textarea class="localstorage" placeholder="Anything you type here will be saved with HTML5 localStorage." autofocus></textarea>
+					<button type="reset" value="Reset">Reset</button>
+					<button class="clear">Clear localStorage</button>
+					<button class="empty">Empty localStorage</button>
+				</form>
+			</div>
+
+		</div>
+
+		<div data-role="header" data-theme="a">
+			<h1>Connect With Us</h1>
+		</div>
+		<div data-role="content">
+			<form id="contactForm" action="" method="POST">
+				<div class="field">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name">
+				</div>
+				<div class="field">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email">
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message"></textarea>
+				</div>
+				<br>
+				<fieldset data-role="controlgroup" class="full">
+					<legend>Please select one:</legend>
+					<input type="radio" name="radio-choice-v-2" id="radioMale" value="on" checked="checked">
+					<label for="radioMale">Male</label>
+					<input type="radio" name="radio-choice-v-2" id="radioFemale" value="off">
+					<label for="radioFemale">Female</label>
+					<input type="radio" name="radio-choice-v-2" id="radioAgent" value="other">
+					<label for="radioAgent">Agent of Shield</label>
+				</fieldset>
+				<div class="field">
+					<input type="submit" value="send">
+				</div>
+				<button type="reset" value="Reset">Reset</button>
+			</form>
+		</div>
+		<div data-role="footer" data-theme="a">
+			<h4>Vegilicious &copy; 2018</h4>
+		</div>
+	</div>
+
+	<div data-role="footer" data-theme="a">
+		<h4>Vegilicious &copy; 2018</h4>
+	</div>
+
+</body>
+
+</html>
+<script>
+	function() {
+
+		var rasm = document.querySelector('.localstorage');
+
+		function supportsLocalStorage() {
+			return typeof(Storage) !== 'undefined';
+		}
+
+		if (!supportsLocalStorage()) {
+			rasm.value = 'Your browser does not support localStorage.';
+		} else {
+			try {
+				setInterval(function()) {
+					localStorage.setItem('autosave', rasm.value);
+
+				} catch (e) {
+					if (e == QUOTA_EXCEEDED_ERR) {
+						alert('Quota exceeded!');
+					}
+				}
+			}
+		}
+		window.onload = function() {
+
+			// Check for LocalStorage support.
+			if (localStorage) {
+
+				// Add an event listener for form submissions
+				document.getElementById('contactForm').addEventListener('submit', function() {
+						// Get the value of the name field.
+						var name = document.getElementById('name').value;
+
+						// Save the name in localStorage.
+						localStorage.setItem('name', name);
+					}
+
+				}
+				// Retrieve the users name.
+				var name = localStorage.getItem('name');
+
+				if (name != "undefined" || name != "null") {
+					document.getElementById('welcomeMessage').innerHTML = "Hello " + name + "!";
+				} else
+					document.getElementById('welcomeMessage').innerHTML = "Hello!";
+			}
+		}
+</script>

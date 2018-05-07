@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Links List</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+
+  <link href="myStyle.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+
+
+</head>
+
+<body>
+  <div id="page" data-role="page" data-theme="a">
+    <div data-role="header" data-theme="a">
+      <div class="logo"><img src="images/vegiliciousLogo.png" width="130" height="60" alt="" /></div>
+    </div>
+    <div data-role="navbar">
+
+      <ul>
+        <li><a href="Mod3Index.html" class="ui-btn-active">Home</a></li>
+        <li><a href="Mod3About.html">About</a></li>
+        <li><a href="Mod3Contact.html">Contact</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+      </ul>
+    </div>
+    <div data-role="header" data-theme="a" data-add-back-btn="true">
+      <h1>Favorite Recipe Links</h1>
+    </div>
+    <div id="container">
+      <div data-role="content">
+        <ul id="favorite-links">
+          <li>
+            <a href="https://mymontanakitchen.com/2017/12/05/crispy-roasted-okra-bacon/">Crispy Roasted Okra With Bacon</a>
+          </li>
+          <li>
+            <a href="https://www.thehealthyhomeeconomist.com/video-beet-kvass/">Beet Kvass</a>
+          </li>
+          <li>
+            <a href="https://feastingnotfasting.com/balsamic-roasted-veggies/">Balsamic Roasted Veggies</a>
+          </li>
+        </ul>
+        <div id="new-link-button">
+          <button>Add Yours Here!</button>
+        </div>
+
+        <div id="add-link-form">
+          <label>Title</label><br /><input id="title" placeholder="Title here" /><br /><label>URL</label><br /><input id="url" value="http://" /><br /><button id="add">Save Link</button>
+        </div>
+      </div>
+    </div>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+
+    <script src="favorites.js"></script>
+
+
+    <div data-role="footer" data-theme="a">
+      <h4>Vegilicious &copy; 2018</h4>
+    </div>
+  </div>
+</body>
+
+</html>
